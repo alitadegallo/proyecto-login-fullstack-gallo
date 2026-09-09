@@ -1,10 +1,13 @@
 {
   "name": "proyecto-prueba-login-gallo",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "dependencies": {
     "@react-stately/collections": "^3.13.1",
     "expo": "~57.0.21",
+    "expo-constants": "~57.0.17",
+    "expo-linking": "~57.0.9",
+    "expo-router": "~57.0.20",
     "expo-status-bar": "~57.0.1",
     "native-base": "^3.4.28",
     "normalize-css-color": "^1.0.2",

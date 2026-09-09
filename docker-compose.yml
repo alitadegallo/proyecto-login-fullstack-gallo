@@ -7,7 +7,7 @@ services:
       MSSQL_SA_PASSWORD: "GalloPassword_2026!"
       MSSQL_PID: "Developer"
     ports:
-      - "1433:1433"
+      - "3301:1433"
     volumes:
       - sqlserver_data:/var/opt/mssql
     restart: unless-stopped
