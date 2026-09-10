@@ -8,7 +8,7 @@ export default function PaginaPrincipal() {
      const [isHoveredCerrarSesion, setIsHoveredCerrarSesion] = useState(false);
   return (
     <Center flex={1}>
-      <Heading>Pagina principal</Heading>
+      <Heading>Bienvenido</Heading>
       <Text style={styles.text}>Has iniciado sesión correctamente.</Text>
 
       <Pressable style={[styles.button, isHoveredCerrarSesion && styles.hovered]} 

@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
     "@react-stately/collections": "^3.13.1",
+    "bootstrap": "^5.3.8",
     "expo": "~57.0.21",
     "expo-constants": "~57.0.17",
     "expo-linking": "~57.0.9",

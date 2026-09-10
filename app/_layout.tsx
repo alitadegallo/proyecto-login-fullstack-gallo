@@ -1,10 +1,16 @@
 import { Stack } from "expo-router";
-import { NativeBaseProvider } from "native-base";
+import { Box, NativeBaseProvider } from "native-base";
+import Footer from "../components/footer";
+import Navbar from "../components/Navbar";
 
 export default function RootLayout() {
   return (
     <NativeBaseProvider>
-      <Stack screenOptions={{ headerShown: false }} />
+      <Navbar />
+      <Box flex={1}>
+        <Stack screenOptions={{ headerShown: false }} />
+      </Box>
+      <Footer />
     </NativeBaseProvider>
   );
 }
