@@ -20,7 +20,7 @@ SQL Server queda disponible en `localhost:3301` con:
 - Contraseña: `123`
 - Base de datos: `GalloDb`
 
-La API crea automáticamente la base `GalloDb` y la tabla `Users` al iniciar. Los usuarios registrados se conservan en el volumen de Docker.
+La API crea automáticamente la base `GalloDb` y la tabla `usuarios` al iniciar. Los usuarios registrados se conservan en el volumen de Docker.
 
 Para abrirla en HeidiSQL usa `Microsoft SQL Server (TCP/IP)`, host `127.0.0.1`, puerto `3301`, usuario `admin`, contraseña `123` y base `GalloDb`.
 
@@ -35,7 +35,7 @@ npm run dev
 
 API: `http://localhost:3300`
 
-Prueba de conexión: `http://localhost:3000/health`
+Prueba de conexión: `http://localhost:3300/health`
 
 ## Frontend Expo
 
