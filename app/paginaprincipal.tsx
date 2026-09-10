@@ -1,34 +1,68 @@
 import { router } from 'expo-router';
-import { Button, Center, Heading, Text, NativeBaseProvider, Box, Container, Toast, useToast } from 'native-base';
+import { Center, Heading, Text } from 'native-base';
 import { useState } from "react";
-import { Pressable, StyleSheet, TextInput, View } from "react-native";
+import { Pressable, ScrollView, StyleSheet } from "react-native";
+import Card from "../components/cards";
 const Spacing = { one: 8, two: 12, three: 16, five: 20 };
+
+const cards = [
+  {
+    image: "https://images.unsplash.com/photo-1742070122889-1505dd7a93b8?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Carretilla elevadora Verde",
+    subtitle: "India",
+    description: "Enviasda desde India el 22/10/2026",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1650296820622-270ea3efe404?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Mini cargadora",
+    subtitle: "Estados Unidos",
+    description: "El 22/10/2026 se enviara al puerto maritimo desde Estados Unidos",
+  },
+  {
+    image: "https://images.unsplash.com/photo-1763665814546-27c2c003317e?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    title: "Montecargas",
+    subtitle: "En china",
+    description: "Sale del puerto maritimo el 22/10/2026",
+  },
+];
 
 export default function PaginaPrincipal() {
      const [isHoveredCerrarSesion, setIsHoveredCerrarSesion] = useState(false);
   return (
-    <Center flex={1}>
-      <Heading>Bienvenido</Heading>
-      <Text style={styles.text}>Has iniciado sesión correctamente.</Text>
+    <ScrollView contentContainerStyle={styles.content}>
+      <Center>
+        <Heading>Bienvenido</Heading>
+        <Text style={styles.text}>Has iniciado sesión correctamente.</Text>
 
-      <Pressable style={[styles.button, isHoveredCerrarSesion && styles.hovered]} 
-      
-        onHoverIn={() => setIsHoveredCerrarSesion(true)}
-        onHoverOut={() => setIsHoveredCerrarSesion(false)} 
-        onPress={() => router.replace("/")}>
+        {cards.map((card) => (
+          <Card key={card.title} {...card} />
+        ))}
 
-        <Text style={[styles.buttonText, isHoveredCerrarSesion && styles.hoveredText]}>Cerrar sesión</Text>
-        
-      </Pressable>
-    </Center>
+        <Pressable
+          style={[styles.button, isHoveredCerrarSesion && styles.hovered]}
+          onHoverIn={() => setIsHoveredCerrarSesion(true)}
+          onHoverOut={() => setIsHoveredCerrarSesion(false)}
+          onPress={() => router.replace("/")}
+        >
+          <Text style={[styles.buttonText, isHoveredCerrarSesion && styles.hoveredText]}>
+            Cerrar sesión
+          </Text>
+        </Pressable>
+      </Center>
+    </ScrollView>
   );
-}
+};
 
 // Estilos de registros
 const styles = StyleSheet.create({
+  content: {
+    flexGrow: 1,
+    paddingVertical: 24,
+  },
+
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#412727",
     alignItems: "center",
     justifyContent: "center",
   },
@@ -40,7 +74,7 @@ const styles = StyleSheet.create({
   },
 
   textInput: {
-    borderColor: "gray",
+    borderColor: "black", 
     fontSize: 16,
     borderWidth: 1,
     marginBottom: 20,

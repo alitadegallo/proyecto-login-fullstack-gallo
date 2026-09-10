@@ -1,5 +1,5 @@
 import { useRouter } from "expo-router";
-import { Box, Button, HStack, Pressable, Spacer, Text } from "native-base";
+import { Box, Button, HStack, Pressable, Spacer, NativeBaseProvider, extendTheme, Text } from "native-base";
 
 export default function Navbar() {
   const router = useRouter();
@@ -9,7 +9,7 @@ export default function Navbar() {
       <HStack alignItems="center" space={4}>
         <Pressable onPress={() => router.push("/paginaprincipal")}> 
           <Text color="white" fontSize="lg" fontWeight="bold">
-            Facebook 2
+            Envios 
           </Text>
         </Pressable>
 
@@ -31,5 +31,7 @@ export default function Navbar() {
         </Button>
       </HStack>
     </Box>
+    
+    
   );
 }

@@ -124,7 +124,7 @@ app.post("/auth/login", async (request, response) => {
 
 const dbConfig: sql.config = {
   server: process.env.DB_SERVER ?? "localhost",
-  port: Number(process.env.DB_PORT ?? 1433),
+  port: Number(process.env.DB_PORT ?? 3301),
   database: process.env.DB_NAME ?? "GalloDb",
   user: process.env.DB_USER ?? "sa",
   password: process.env.DB_PASSWORD ?? "GalloPassword_2026!",
